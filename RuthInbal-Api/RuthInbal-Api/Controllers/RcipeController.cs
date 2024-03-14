@@ -73,7 +73,7 @@ namespace RuthInbal_Api.Controllers
             DateOfAddTheRecipe = DateTime.Now,
             Preparation = new List<string> { "put all the products in the box", "mix all the products" },
             CategoryId = category3,
-            Imag7 = "https://greissdesign.com/wp-content/uploads/2019/07/pasta-S.jpg",
+            Imag7 = "https://greissdesign.com/wp-content/uploads/2019/10/slavic-food-S.jpg",
             PreparationTimeInMinutes = 35.0,
             Ingredients = listOfIngredients
         };

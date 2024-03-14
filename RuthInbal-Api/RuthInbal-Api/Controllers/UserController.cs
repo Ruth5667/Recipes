@@ -9,8 +9,12 @@ namespace RuthInbal_Api.Controllers
     public class UserController : ControllerBase
     {
         public static List<User> users = new List<User> {
+            new User{Id = 3, UserName = "Dora", Adress = "Ginot-David", Mail = "Nechama@gmail.com", Password = 789456 },
             new User{Id = 1, UserName = "Nechama", Adress = "Ginot-David", Mail = "Nechama@gmail.com", Password = 1234 },
-            new User{Id = 2, UserName = "Moishe", Adress = "Ben-David", Mail = "Moishe@gmail.com", Password = 34 },
+            new User{Id = 2, UserName = "Moishe", Adress = "Ben-David", Mail = "Moishe@gmail.com", Password = 34564 },
+            new User{Id = 4, UserName = "BatSheva", Adress = "Ginot-David", Mail = "Nechama@gmail.com", Password = 789456 },
+            new User{Id = 5, UserName = "Ayala", Adress = "Ginot-David", Mail = "Nechama@gmail.com", Password = 1234 },
+            new User{Id = 6, UserName = "Pnina", Adress = "Ben-David", Mail = "Moishe@gmail.com", Password = 3554 },
         };
         [HttpGet]
         public IEnumerable<User> Get()
@@ -20,8 +24,7 @@ namespace RuthInbal_Api.Controllers
         [HttpGet("{id}")]
         public User Get(int id)
         {
-            var user = users[id - 1];
-            return user;
+            return users.Where(x => x.Id == id).ToList().FirstOrDefault();
         }
         //[Route("login")]
         //[HttpPost]
@@ -73,7 +76,7 @@ namespace RuthInbal_Api.Controllers
             try
             {
                 var foundUser = users.Where(x => x.UserName == user.UserName && x.Password == user.Password).ToList();
-                if (foundUser.Count > 0)
+                if (foundUser.Count < 0)
                     return NotFound();
 
                 users.Add(user);

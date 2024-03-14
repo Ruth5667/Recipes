@@ -5,9 +5,9 @@ import { UserServiceService } from '../services/user-service.service';
 import { Router } from '@angular/router';
 import { User } from '../models/user.model';
 import {AllRecipesComponent} from '../all-recipes/all-recipes.component'
-import 'bootstrap';
-import 'popper.js';
-import 'jquery';
+// import 'bootstrap';
+// import 'popper.js';
+// import 'jquery';
 
 @Component({
     selector: 'app-login',
@@ -20,10 +20,9 @@ export class LoginComponent {
   LoginForm: FormGroup = new FormGroup({
     "userName": new FormControl("", [Validators.required, Validators.minLength(3)]),
     "password": new FormControl("", [Validators.required])
-
   })
-  public showLogin: boolean=true
-  public showErrorMessege: boolean= false;
+  public showLogin: boolean = true
+  public showErrorMessege: boolean = false
 //   // קוד TypeScript בקומפוננטה או בסרוויס בהתאם למבנה האפליקציה שלך
 // const user = { name: 'John', email: 'john@example.com' };
 // sessionStorage.setItem('currentUser', JSON.stringify(user));
