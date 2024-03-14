@@ -1,0 +1,18 @@
+<div [formGroup]="DetailsForm">
+    <input type="text" formControlName="recipe_code" placeholder="{{recipe.idRecipe}}" >
+    <ng-container *ngIf="this.DetailsForm.controls['recipe_code'].errors as idError">
+      <!-- <p appHightLight *ngIf="idError['required']">this field is must!</p> -->
+      <p *ngIf="idError['minlength']">this field is must at least 9 digits</p>
+    </ng-container>
+  
+    <input type="text" formControlName="image" value="{{recipe.imag7}}" placeholder="{{recipe.imag7}}">
+    <input type="text" formControlName="recipe_name" value="{{recipe.recipeName}}" placeholder="{{recipe.recipeName}}">
+    <input type="text" formControlName="preparation_time_in_minutes" value="{{recipe.preparationTimeInMinutes}}" placeholder="{{recipe.preparationTimeInMinutes}}">
+    <input type="text" formControlName="difficulty_level_1_5" value="{{recipe.difficultyLevel}}" placeholder="{{recipe.difficultyLevel}}">
+    <ng-container *ngIf="this.DetailsForm.controls['difficulty_level_1_5'].errors as idError">
+      <p *ngIf="idError['min']">this field is must at least 1</p>
+      <p *ngIf="idError['max']">this field is must at most 5</p>
+  </ng-container>
+  <button (click)="save()">save</button>
+  <button (click)="back()">back</button>
+  </div>

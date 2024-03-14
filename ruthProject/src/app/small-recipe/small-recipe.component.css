@@ -1,0 +1,32 @@
+/* .gfd {
+    cursor: pointer;
+} */
+
+:host {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 100px;
+    width: 500px;
+    /* מרווח בין הקומפוננטות */
+}
+
+#imgcss {
+    width: 70px;
+    height: 140px;
+}
+
+
+
+.star {
+    font-size: 30px;
+    color: #ffd700;
+    /* צבע זהב */
+    position: relative;
+    display: inline-block;
+    margin-right: 5px;
+    /* מרווח בין הכוכבים */
+}
+

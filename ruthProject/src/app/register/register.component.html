@@ -1,0 +1,12 @@
+
+<div [formGroup] = "RegisterForm">
+    <input placeholder="id" type = "text" formControlName = "id"><br>
+    <input placeholder="name" type = "text" formControlName = "userName"><br>
+    <input placeholder="adress" type = "text" formControlName = "adress"><br>
+    <input placeholder="email" type = "text" formControlName = "email"><br>
+    <input placeholder="password" type = "text" formControlName = "password"><br>
+    <button type="submit" [disabled]="!this.RegisterForm.valid" (click)="login()">login</button>
+</div>
+<ng-container *ngIf="res===true">
+    <p>the user is exist!</p>
+</ng-container>

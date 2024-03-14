@@ -1,0 +1,40 @@
+
+.star {
+    font-size: 30px;
+    color: #ffd700;
+    /* צבע זהב */
+    position: relative;
+    display: inline-block;
+    margin-right: 5px;
+    /* מרווח בין הכוכבים */
+    
+}
+.recipe-details {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .category {
+    display: flex;
+    align-items: center;
+  }
+  
+  .category h3 {
+    margin-right: 10px;
+  }
+  
+  .stars {
+    margin-bottom: 10px;
+  }
+  #container{display: flex;
+  justify-content: center;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  

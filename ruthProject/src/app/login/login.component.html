@@ -1,0 +1,11 @@
+<div *ngIf="!showLogin">
+<app-all-recipes></app-all-recipes>
+</div>
+<div [formGroup] = "LoginForm">
+    <input placeholder="Name" type = "text" formControlName = "userName">
+    <p *ngIf="showErrorMessege">pls enter password again!</p>
+    <input placeholder="password" type = "text" formControlName = "password">
+    <button type="submit" [disabled]="!this.LoginForm.valid" (click)="login()">login</button>
+
+ </div>
+<!-- <p *ngIf ="res"></p> -->
