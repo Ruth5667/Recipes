@@ -5,13 +5,14 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { Recipe } from '../models/recipe.model';
 import { Router } from '@angular/router';
 import { RecipeServiceService } from '../services/recipe-service.service';
+import { MyTimePipe } from "../format-time.pipe";
 
 @Component({
-  selector: 'app-edit-recipe',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, SmallRecipeComponent],
-  templateUrl: './edit-recipe.component.html',
-  styleUrl: './edit-recipe.component.css'
+    selector: 'app-edit-recipe',
+    standalone: true,
+    templateUrl: './edit-recipe.component.html',
+    styleUrl: './edit-recipe.component.css',
+    imports: [CommonModule, ReactiveFormsModule, FormsModule, SmallRecipeComponent, MyTimePipe]
 })
 export class EditRecipeComponent {
   @Input() 

@@ -3,13 +3,14 @@ import { Recipe } from '../models/recipe.model';
 import { Router } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { MyTimePipe } from "../format-time.pipe";
 
 @Component({
-  selector: 'app-small-recipe',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FormsModule],
-  templateUrl:'./small-recipe.component.html',
-  styleUrl: './small-recipe.component.css'
+    selector: 'app-small-recipe',
+    standalone: true,
+    templateUrl: './small-recipe.component.html',
+    styleUrl: './small-recipe.component.css',
+    imports: [CommonModule, ReactiveFormsModule, FormsModule, MyTimePipe]
 })
 export class SmallRecipeComponent implements OnInit{
   @Input() recipee!: Recipe

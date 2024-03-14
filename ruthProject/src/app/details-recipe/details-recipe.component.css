@@ -1,3 +1,4 @@
+/* @import "~bootstrap/dist/css/bootstrap.css"; */
 
 .star {
     font-size: 30px;
@@ -6,8 +7,11 @@
     position: relative;
     display: inline-block;
     margin-right: 5px;
-    /* מרווח בין הכוכבים */
-    
+    transition: color 0.3s ease; /* אנימציה לצבע הכוכבים */
+
+}
+.star:hover {
+    color: #ff5733; /* צבע אדום כאשר מעבירים את העכבר מעל הכוכב */
 }
 .recipe-details {
     max-width: 600px;
@@ -15,26 +19,48 @@
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
-  }
-  
-  .category {
+    background-color: #f9f9f9; /* צבע רקע עבור המידע על המתכון */
+    transition: background-color 0.3s ease; /* אנימציה לצבע הרקע של תיבת המתכון */
+
+}
+.recipe-details:hover {
+    background-color: #f0f0f0; /* צבע רקע נוסף כאשר מעבירים את העכבר מעל תיבת המתכון */
+}
+.category {
     display: flex;
     align-items: center;
-  }
-  
-  .category h3 {
+}
+
+.category h3 {
     margin-right: 10px;
-  }
-  
-  .stars {
+}
+
+.stars {
     margin-bottom: 10px;
-  }
-  #container{display: flex;
-  justify-content: center;
-  }
-  
-  img {
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+}
+
+img {
     max-width: 100%;
     height: auto;
-  }
-  
+}
+
+#icon {
+    width: 20px;
+    height: 20px;
+}
+h1 {
+    color: #333; /* צבע טקסט ראשי */
+}
+
+h3 {
+    color: #555; /* צבע טקסט תתי כותרת */
+}
+
+li {
+    color: #666; /* צבע טקסט רשימה */
+}

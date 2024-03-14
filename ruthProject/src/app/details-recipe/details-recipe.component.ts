@@ -6,7 +6,7 @@ import { Recipe } from '../models/recipe.model';
 import { ActivatedRoute } from '@angular/router';
 import { RecipeServiceService } from '../services/recipe-service.service';
 import { Router } from '@angular/router';
-
+// import { EditRecipeComponent } from '../edit-recipe/edit-recipe.component';
 
 @Component({
   selector: 'app-details-recipe',
@@ -53,5 +53,8 @@ export class DetailsRecipeComponent implements OnInit {
       }
     })
   }
+  updateRecipe() {
+    this.router.navigate(["editRecipe"])
 
+  }
 }

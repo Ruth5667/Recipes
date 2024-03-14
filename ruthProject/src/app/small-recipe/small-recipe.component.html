@@ -5,7 +5,7 @@
     <div class="stars">
       <span class="star" *ngFor="let star of stars"><span>&#9733;</span></span>
     </div>
-    <p>during: {{recipee.preparationTimeInMinutes}}</p>
+    <p>during: {{recipee.preparationTimeInMinutes|myTime}}</p>
     <img id="imgcss" src="{{recipee.imag7}}" alt="{{recipee.recipeName}}">
   </div>
 </ng-container>

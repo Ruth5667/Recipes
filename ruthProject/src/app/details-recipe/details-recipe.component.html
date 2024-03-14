@@ -1,25 +1,28 @@
 <div id="container">
     <ng-container *ngIf="recipe">
-        <div>
-            <h1>{{recipe.recipeName}}</h1>
-            <h3>{{recipe.categoryId.name}}, <img src="{{recipe.categoryId.iconPath}}" alt="icon"></h3>
-            <p>level:</p>
-            <div class="stars">
-                <span class="star" *ngFor="let star of stars"><span>&#9733;</span></span>
+        <div class="card recipe-details">
+            <div class="card-body">
+            <h1 class="card-title">{{recipe.recipeName}}</h1>
+            <div class="category">
+            <h3><img id="icon" src="{{recipe.categoryId.iconPath}}" alt="icon"> {{recipe.categoryId.name}} </h3>
             </div>
-            <img src="{{recipe.imag7}}" alt="imag">
+            <div class="stars">
+                <p>Level:</p><span class="star" *ngFor="let star of stars"><span>&#9733;</span></span>
+            </div>
+            <img class="card-img-top" src="{{recipe.imag7}}" alt="imag">
             <h3>Ingredients:</h3>
-            <ul>
-                <li *ngFor="let ingredient of recipe.ingredients">
-                    <!-- <img src="path_to_your_ingredient_icon" alt="Ingredient Icon">-->
+            <ul class="list-group">
+                <li *ngFor="let ingredient of recipe.ingredients" class="list-group-item">
                     {{ ingredient }}
                 </li>
             </ul>
             <h3>Preparation:</h3>
-            <ol>
-                <li *ngFor="let step of recipe.preparation">{{ step }}</li>
+            <ol class="list-group">
+                <li *ngFor="let step of recipe.preparation"class="list-group-item">{{ step }}</li>
             </ol>
         </div>
+    </div>
     </ng-container>
 </div>
-    <input type="button" value="deleteRecipe" (click)="deleteRecipe()">
+    <input type="button" class="btn btn-danger" value="deleteRecipe" (click)="deleteRecipe()">
+    <input type="button" class="btn btn-danger" value="updateRecipe" (click)="updateRecipe()">

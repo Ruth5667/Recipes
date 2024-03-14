@@ -1,0 +1,43 @@
+.details-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .input-group {
+    margin-bottom: 40px; /* מרווח בין ה-inputs */
+  }
+  
+  .styled-input {
+    width: 250px; /* רוחב קבוע ל-input */
+    padding: 10px; /* מרווחים בתוך ה-input */
+    border: 1px solid #ccc; /* גבול סולידי */
+    border-radius: 5px; /* רינוע עגול לפינות */
+    font-size: 16px; /* גודל גופן */
+    margin: 0 10px; 
+  }
+  
+  .error-message {
+    color: red; /* צבע אדום להודעות שגיאה */
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .styled-button {
+    margin: 0 10px; /* מרווח בין הכפתורים */
+    padding: 10px 20px; /* מרווחים פנימיים */
+    font-size: 16px; /* גודל גופן */
+    background-color: #007bff; /* צבע רקע לכפתור */
+    color: #fff; /* צבע טקסט בכפתור */
+    border: none; /* ללא גבול */
+    border-radius: 5px; /* רינוע עגול לפינות */
+    cursor: pointer; /* סמן עכבר מצביע על כפתור */
+  }
+  
+  .styled-button:hover {
+    background-color: #0056b3; /* צבע רקע משתנה בעכבר מעל הכפתור */
+  }
+  

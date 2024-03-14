@@ -21,8 +21,8 @@ export class RegisterComponent implements OnInit{
     "email": new FormControl("")
 
   })
- public currentUser =this.RegisterForm;
-//  sessionStorage.setItem('currentUser', JSON.stringify(currentUser));
+//  public currentUser =this.RegisterForm as User;
+//    sessionStorage.setItem('currentUser', JSON.stringify(currentUser));
   public res!:boolean
   constructor(private _userService: UserServiceService, private router: Router) { }
   ngOnInit(): void {
