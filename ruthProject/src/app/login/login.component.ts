@@ -5,6 +5,10 @@ import { UserServiceService } from '../services/user-service.service';
 import { Router } from '@angular/router';
 import { User } from '../models/user.model';
 import {AllRecipesComponent} from '../all-recipes/all-recipes.component'
+import 'bootstrap';
+import 'popper.js';
+import 'jquery';
+
 @Component({
     selector: 'app-login',
     standalone: true,

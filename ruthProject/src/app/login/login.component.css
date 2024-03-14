@@ -1,0 +1,32 @@
+/* src/styles.css */
+.login-form {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .form-group input {
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+  .error-message {
+    color: red; /* צבע טקסט להודעות שגיאה */
+  }
+/* login.component.css */
+.login-form label {
+    font-weight: bold;
+  }
+  
+.container {
+    margin-top: 50px;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .error-message {
+    color: red;
+  }
