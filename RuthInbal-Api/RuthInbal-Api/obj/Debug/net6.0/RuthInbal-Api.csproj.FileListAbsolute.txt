@@ -30,3 +30,4 @@ C:\Users\User\Desktop\שנה ב\פרויקטים\Angular\FinalProject\RuthInbal-
 C:\Users\User\Desktop\שנה ב\פרויקטים\Angular\FinalProject\RuthInbal-Api\RuthInbal-Api\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.RuthInbal-Api.props
 C:\Users\User\Desktop\שנה ב\פרויקטים\Angular\FinalProject\RuthInbal-Api\RuthInbal-Api\obj\Debug\net6.0\staticwebassets.pack.json
 C:\Users\User\Desktop\שנה ב\פרויקטים\Angular\FinalProject\RuthInbal-Api\RuthInbal-Api\obj\Debug\net6.0\RuthInba.143CC052.Up2Date
+C:\Users\User\Desktop\שנה ב\פרויקטים\Angular\FinalProject\RuthInbal-Api\RuthInbal-Api\obj\Debug\net6.0\RuthInbal-Api.sourcelink.json

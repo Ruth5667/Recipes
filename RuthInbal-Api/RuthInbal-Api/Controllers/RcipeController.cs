@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Xml.Linq;
 
 namespace RuthInbal_Api.Controllers
 {
@@ -8,8 +9,11 @@ namespace RuthInbal_Api.Controllers
     {
         private static int num = 0;
         private static User user = new User { Id = 3, UserName = "keila", Adress = "pejo", Mail = "a@gmail.com", Password = 9874 };
-        private static Category category = new Category{ Id =1, Name = "Cake", IconPath = ""};
-        private static List<string> listOfIngredients = new List<string>{ "milk", "2 eggs" };
+        private static Category category1 = new Category() { Id = 1, Name = "Cake", IconPath = "https://img.lovepik.com/element/45013/6023.png_300.png" };
+        private static Category category2 = new Category() { Id = 1, Name = "Cake", IconPath = "https://img.lovepik.com/element/45013/6023.png_300.png" };
+        private static Category category = new Category() { Id = 2, Name = "hot drink", IconPath = "https://publicdomainvectors.org/tn_img/tea-with-lemon-publicdomain.webp" };
+        private static Category category3 = new Category() { Id = 3, Name = "vegetables", IconPath = "https://greissdesign.com/wp-content/uploads/2016/03/Vegetables_on_Wood-s.jpg" };
+        private static List<string> listOfIngredients = new List<string> { "milk", "2 eggs" };
         private static Recipe recipe1 = new Recipe
         {
             IdRecipe = 1,
@@ -18,25 +22,62 @@ namespace RuthInbal_Api.Controllers
             IdUser = user,
             DateOfAddTheRecipe = DateTime.Now,
             Preparation = new List<string> { "put all the products in the box", "mix all the products" },
-            CategoryId = category,
-            Imag7 = "https://cdna.wobily.com/images/5223a2d2-5755-4c12-a98a-0930d9149e2e_500.jpg",
+            CategoryId = category1,
+            Imag7 = "https://greissdesign.com/wp-content/uploads/2019/07/pasta-S.jpg",
             PreparationTimeInMinutes = 35.0,
             Ingredients = listOfIngredients
         }; private static Recipe recipe2 = new Recipe
         {
-            IdRecipe = 1,
+            IdRecipe = 2,
             RecipeName = "BirthdayCake",
             DifficultyLevel = 2,
             IdUser = user,
             DateOfAddTheRecipe = DateTime.Now,
             Preparation = new List<string> { "put all the products in the box", "mix all the products" },
-            CategoryId = category,
-            Imag7 = "https://marianacakes.com/wp-content/uploads/2021/01/weddingcake2.jpg",
+            CategoryId = category1,
+            Imag7 = "https://greissdesign.com/wp-content/uploads/2019/07/food1-Freebies-S.jpg",
+            PreparationTimeInMinutes = 35.0,
+            Ingredients = listOfIngredients
+        }; private static Recipe recipe3 = new Recipe
+        {
+            IdRecipe = 3,
+            RecipeName = "BirthdayCake",
+            DifficultyLevel = 2,
+            IdUser = user,
+            DateOfAddTheRecipe = DateTime.Now,
+            Preparation = new List<string> { "put all the products in the box", "mix all the products" },
+            CategoryId = category2,
+            Imag7 = "https://greissdesign.com/wp-content/uploads/2016/03/Food_Sandwich-Food-S.jpg",
             PreparationTimeInMinutes = 35.0,
             Ingredients = listOfIngredients
         };
-
-        private static List<Recipe> recipes = new List<Recipe> { recipe1, recipe2 };
+        private static Recipe recipe4 = new Recipe
+        {
+            IdRecipe = 4,
+            RecipeName = "BirthdayCake",
+            DifficultyLevel = 2,
+            IdUser = user,
+            DateOfAddTheRecipe = DateTime.Now,
+            Preparation = new List<string> { "put all the products in the box", "mix all the products" },
+            CategoryId = category3,
+            Imag7 = "https://greissdesign.com/wp-content/uploads/2019/07/food2-Freebies-S.jpg",
+            PreparationTimeInMinutes = 35.0,
+            Ingredients = listOfIngredients
+        };
+        private static Recipe recipe5 = new Recipe
+        {
+            IdRecipe = 5,
+            RecipeName = "BirthdayCake",
+            DifficultyLevel = 2,
+            IdUser = user,
+            DateOfAddTheRecipe = DateTime.Now,
+            Preparation = new List<string> { "put all the products in the box", "mix all the products" },
+            CategoryId = category3,
+            Imag7 = "https://greissdesign.com/wp-content/uploads/2019/07/pasta-S.jpg",
+            PreparationTimeInMinutes = 35.0,
+            Ingredients = listOfIngredients
+        };
+        private static List<Recipe> recipes = new List<Recipe> { recipe1, recipe2, recipe3, recipe4, recipe5 };
 
 
         [HttpGet]

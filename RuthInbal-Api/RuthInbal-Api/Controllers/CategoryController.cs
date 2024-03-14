@@ -10,9 +10,9 @@ namespace RuthInbal_Api.Controllers
     {
         public static List<Category> categories = new List<Category>()
         {
-            new Category(){Id=1, Name="dairy",IconPath="D://kkk"},
-            new Category(){Id=2, Name="cake",IconPath="D://kkk"},
-            new Category(){Id=3, Name="coockies",IconPath="D://kkk"}
+            new Category(){Id=1, Name="Cake",IconPath="https://img.lovepik.com/element/45013/6023.png_300.png"},
+            new Category(){Id=2, Name="hot drink",IconPath="https://publicdomainvectors.org/tn_img/tea-with-lemon-publicdomain.webp"},
+            new Category(){Id=3, Name="vegetables",IconPath="https://greissdesign.com/wp-content/uploads/2016/03/Vegetables_on_Wood-s.jpg"}
         };
         // GET: api/<CategoryController>
         [HttpGet]
