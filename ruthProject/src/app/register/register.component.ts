@@ -31,8 +31,9 @@ export class RegisterComponent implements OnInit{
     this._userService.register(this.RegisterForm.value as User).subscribe(
       {
         error: () => this.res=true,
-        next: () => {
-          this.router.navigate(["allRecipes"]);
+        next: (res) => {
+          sessionStorage.setItem("currentUserId", (res.id ?? 0).toString())
+          this.router.navigate(["home","allRecipes"]);
           }
       });
   }

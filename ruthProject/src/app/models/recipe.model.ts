@@ -12,7 +12,7 @@ export class Recipe {
 
     ingredients!: string[]
     preparation!: string[]
-    iduser!: User
+    idUser!: User
     imag7!: string
 }
 

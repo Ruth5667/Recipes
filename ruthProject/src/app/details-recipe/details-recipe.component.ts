@@ -20,6 +20,7 @@ export class DetailsRecipeComponent implements OnInit {
   public recipe!: Recipe
   public recipeId!: number
   numberOfStars!: number;
+  currentUserId:number=Number(sessionStorage.getItem("currentUserId"));
   stars!: number[]
   constructor(private router: Router, private route: ActivatedRoute, private _reciprService: RecipeServiceService) { }
 
@@ -45,7 +46,7 @@ export class DetailsRecipeComponent implements OnInit {
   deleteRecipe() {
     this._reciprService.delete(this.recipeId).subscribe({
       next: () => {
-        this.router.navigate(["allRecipes"])
+        this.router.navigate(["home","allRecipes"])
 
       },
       error: (err) => {
@@ -54,7 +55,7 @@ export class DetailsRecipeComponent implements OnInit {
     })
   }
   updateRecipe() {
-    this.router.navigate(["editRecipe"])
+    this.router.navigate(["home","editRecipe",this.recipe.idRecipe])
 
   }
 }

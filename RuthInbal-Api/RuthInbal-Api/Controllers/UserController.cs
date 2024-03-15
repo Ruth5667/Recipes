@@ -8,6 +8,7 @@ namespace RuthInbal_Api.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+        public static int idForUser = 0;
         public static List<User> users = new List<User> {
             new User{Id = 3, UserName = "Dora", Adress = "Ginot-David", Mail = "Nechama@gmail.com", Password = 789456 },
             new User{Id = 1, UserName = "Nechama", Adress = "Ginot-David", Mail = "Nechama@gmail.com", Password = 1234 },
@@ -54,9 +55,9 @@ namespace RuthInbal_Api.Controllers
                 if (foundUser != null)
                 {
                     if (foundUser.Password == user.Password)
-                        return Ok(true); // מחזיר 200 OK עם ערך true
+                        return Ok(foundUser); // מחזיר 200 OK עם ערך true
                     else
-                        return Ok(false); // מחזיר 200 OK עם ערך false
+                        return Ok(null); // מחזיר 200 OK עם ערך false
                 }
                 else
                 {
@@ -78,9 +79,9 @@ namespace RuthInbal_Api.Controllers
                 var foundUser = users.Where(x => x.UserName == user.UserName && x.Password == user.Password).ToList();
                 if (foundUser.Count < 0)
                     return NotFound();
-
+                user.Id = idForUser++;
                 users.Add(user);
-                return Ok(true);
+                return Ok(user);
             }
             catch (Exception ex)
             {

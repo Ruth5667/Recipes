@@ -12,11 +12,11 @@ export class UserServiceService {
 
   constructor(private _http: HttpClient) {
   }
-  login(user: User) :Observable<boolean>{
-    return this._http.post<boolean>(`https://localhost:7093/api/User/login`,user)
+  login(user: User) :Observable<User>{
+    return this._http.post<User>(`https://localhost:7093/api/User/login`,user)
   }
-  register(user: User){
-    return this._http.post(`https://localhost:7093/api/User`,user)
+  register(user: User):Observable<User>{
+    return this._http.post<User>(`https://localhost:7093/api/User`,user)
   }
   // getUsers(): Observable<User[]>{
   //   return this._http.get<User[]>('https://localhost:7093/api/User')

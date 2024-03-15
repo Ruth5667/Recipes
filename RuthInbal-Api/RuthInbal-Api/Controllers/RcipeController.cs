@@ -9,8 +9,9 @@ namespace RuthInbal_Api.Controllers
     {
         private static int num = 0;
         private static User user = new User { Id = 3, UserName = "keila", Adress = "pejo", Mail = "a@gmail.com", Password = 9874 };
+        private static User user1 = new User { Id = 4, UserName = "keila", Adress = "pejo", Mail = "a@gmail.com", Password = 9874 };
         private static Category category1 = new Category() { Id = 1, Name = "Cake", IconPath = "https://img.lovepik.com/element/45013/6023.png_300.png" };
-        private static Category category2 = new Category() { Id = 1, Name = "Cake", IconPath = "https://img.lovepik.com/element/45013/6023.png_300.png" };
+        private static Category category2 = new Category() { Id = 2, Name = "Cake", IconPath = "https://img.lovepik.com/element/45013/6023.png_300.png" };
         private static Category category = new Category() { Id = 2, Name = "hot drink", IconPath = "https://publicdomainvectors.org/tn_img/tea-with-lemon-publicdomain.webp" };
         private static Category category3 = new Category() { Id = 3, Name = "vegetables", IconPath = "https://greissdesign.com/wp-content/uploads/2016/03/Vegetables_on_Wood-s.jpg" };
         private static List<string> listOfIngredients = new List<string> { "milk", "2 eggs" };
@@ -19,7 +20,7 @@ namespace RuthInbal_Api.Controllers
             IdRecipe = 1,
             RecipeName = "BirthdayCake",
             DifficultyLevel = 2,
-            IdUser = user,
+            IdUser = user1,
             DateOfAddTheRecipe = DateTime.Now,
             Preparation = new List<string> { "put all the products in the box", "mix all the products" },
             CategoryId = category1,
@@ -29,19 +30,19 @@ namespace RuthInbal_Api.Controllers
         }; private static Recipe recipe2 = new Recipe
         {
             IdRecipe = 2,
-            RecipeName = "BirthdayCake",
+            RecipeName = "Meet",
             DifficultyLevel = 2,
             IdUser = user,
             DateOfAddTheRecipe = DateTime.Now,
             Preparation = new List<string> { "put all the products in the box", "mix all the products" },
             CategoryId = category1,
             Imag7 = "https://greissdesign.com/wp-content/uploads/2019/07/food1-Freebies-S.jpg",
-            PreparationTimeInMinutes = 35.0,
+            PreparationTimeInMinutes = 44,
             Ingredients = listOfIngredients
         }; private static Recipe recipe3 = new Recipe
         {
             IdRecipe = 3,
-            RecipeName = "BirthdayCake",
+            RecipeName = "Yoyo",
             DifficultyLevel = 2,
             IdUser = user,
             DateOfAddTheRecipe = DateTime.Now,
@@ -101,7 +102,7 @@ namespace RuthInbal_Api.Controllers
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] Recipe recipe)
         {
-            Recipe recipeToUpdate = recipes[id - 1];
+            Recipe recipeToUpdate = recipes.Where(r => r.IdRecipe == id).First();
             recipeToUpdate.IdRecipe = id;
             if (recipe.CategoryId != null)
                 recipeToUpdate.CategoryId = recipe.CategoryId;

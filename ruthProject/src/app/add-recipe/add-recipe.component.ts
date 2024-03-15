@@ -71,7 +71,7 @@ export class AddRecipeComponent {
         {
           next: () => {
             this.res = true,
-              this.router.navigate(["allRecipes"])
+              this.router.navigate(["home","allRecipes"])
           }
         })
   }

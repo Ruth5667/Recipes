@@ -23,6 +23,11 @@ export class SmallRecipeComponent implements OnInit{
   }
   showAllDetails():void
   {
-    this.router.navigate(['detailsRecipe',this.recipee.idRecipe]);
+    if(sessionStorage.getItem("currentUserId")){
+     this.router.navigate(["home",'detailsRecipe',this.recipee.idRecipe]);
+    }
+    else{
+      alert("You must login before")
+    }
   }
 }

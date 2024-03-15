@@ -1,12 +1,19 @@
 import { Component } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-top-bar',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './top-bar.component.html',
   styleUrl: './top-bar.component.css'
 })
 export class TopBarComponent {
+  constructor(private router: Router) {
 
+  }
+  logout() {
+    sessionStorage.clear();
+    this.router.navigate([""])
+  }
 }

@@ -1,25 +1,43 @@
 <div class="details-form" [formGroup]="DetailsForm">
     <div class="input-group">
-        <input class="styled-input" type="text" formControlName="recipe_code" placeholder="{{recipe.idRecipe}}">
+        <!-- <input class="styled-input" type="text" formControlName="recipe_code" placeholder="{{recipe.idRecipe}}">
         <ng-container *ngIf="this.DetailsForm.controls['recipe_code'].errors as idError">
-            <!-- <p appHightLight *ngIf="idError['required']">this field is must!</p> -->
             <p *ngIf="idError['minlength']" class="error-message">This field must be at least 9 digits</p>
-        </ng-container>
-        <input class="styled-input" type="text" formControlName="image" value="{{recipe.imag7}}"
-            placeholder="{{recipe.imag7}}">
-        <input class="styled-input" type="text" formControlName="recipe_name" value="{{recipe.recipeName}}"
-            placeholder="{{recipe.recipeName}}">
-        <input class="styled-input" type="text" formControlName="preparation_time_in_minutes"
-            value="{{recipe.preparationTimeInMinutes|myTime}}" placeholder="{{recipe.preparationTimeInMinutes|myTime}}">
-        <input class="styled-input" type="text" formControlName="difficulty_level_1_5"
-            value="{{recipe.difficultyLevel}}" placeholder="{{recipe.difficultyLevel}}">
-        <ng-container *ngIf="this.DetailsForm.controls['difficulty_level_1_5'].errors as idError">
+        </ng-container><br> -->
+        <input class="styled-input" type="text" formControlName="imag7" [placeholder]="recipe?.imag7"><br>
+        <input class="styled-input" type="text" formControlName="recipeName" [placeholder]="recipe?.recipeName"><br>
+        <input class="styled-input" type="text" formControlName="preparationTimeInMinutes"
+            [placeholder]="recipe?.preparationTimeInMinutes"><br>
+        <input class="styled-input" type="text" formControlName="difficultyLevel"><br>
+        <ng-container *ngIf="this.DetailsForm.controls['difficultyLevel'].errors as idError">
             <p *ngIf="idError['min']" class="error-message">this field is must at least 1</p>
             <p *ngIf="idError['max']" class="error-message">this field is must at most 5</p>
         </ng-container>
-    </div>
-    <div class="button-group">
-        <button class="styled-button" (click)="save()">save</button>
+        <ng-container formArrayName="preparation">
+            <ng-container *ngFor="let item of preparation.controls; let i = index">
+                <div>
+                    <input id="name" type="text" [formControlName]="i" />
+                </div>
+                <div class="button-group">
+                    <button (click)="removePreparation(i)" type="button">delete</button>
+                </div>
+            </ng-container>
+            <button (click)="addNewPreparation()" type="button">add</button>
+        </ng-container>
+
+        <ng-container formArrayName="ingredients">
+            <ng-container *ngFor="let item of ingredients.controls; let i = index">
+                <div>
+                    <input id="name" type="text" [formControlName]="i" />
+                </div>
+                <div class="button-group">
+                    <button (click)="removeIngredients(i)" type="button">delete</button>
+                </div>
+            </ng-container>
+            <button (click)="addNewIngredients()" type="button">add</button>
+        </ng-container>
         <button class="styled-button" (click)="back()">back</button>
+        <button class="styled-button" (click)="save()">save</button>
+
     </div>
 </div>

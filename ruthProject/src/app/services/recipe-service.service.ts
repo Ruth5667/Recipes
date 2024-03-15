@@ -20,7 +20,7 @@ export class RecipeServiceService {
     return this._http.get<Recipe>(`https://localhost:7093/api/Recipe/${id}`)
   }
   putRecipe(recipe: Recipe){
-    return this._http.put(`https://localhost:7093/api/Recipe/id?id=${recipe.idRecipe}`,recipe)
+    return this._http.put(`https://localhost:7093/api/Recipe/${recipe.idRecipe}`,recipe)
   }
   delete(id: number){
     // let options = {

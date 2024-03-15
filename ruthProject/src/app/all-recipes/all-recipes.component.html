@@ -1,5 +1,17 @@
 <div class="container" >
-<div *ngFor="let recipe of recipesList" style="width: 18rem;">
+    <div [formGroup]="filterForm">
+    filter the recipesList by:
+    Category:
+    <select formControlName="categoryId">
+        <option disabled>select</option>
+        <option *ngFor="let category of categoryList" [value]="category.id">
+            <h1>{{category.name}} </h1>
+        </option>
+    </select>
+    <input formControlName="name">
+<input formControlName="durinigTimeOfPreparation" type="number">
+</div>
+<div *ngFor="let recipe of recipesListByFilter" style="width: 18rem;">
     <app-small-recipe [recipee]="recipe"></app-small-recipe>
     <hr>
 </div>

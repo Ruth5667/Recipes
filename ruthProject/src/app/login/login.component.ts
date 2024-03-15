@@ -4,17 +4,17 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { UserServiceService } from '../services/user-service.service';
 import { Router } from '@angular/router';
 import { User } from '../models/user.model';
-import {AllRecipesComponent} from '../all-recipes/all-recipes.component'
-// import 'bootstrap';
-// import 'popper.js';
-// import 'jquery';
+import { AllRecipesComponent } from '../all-recipes/all-recipes.component'
+import 'bootstrap';
+import 'popper.js';
+import 'jquery';
 
 @Component({
-    selector: 'app-login',
-    standalone: true,
-    templateUrl: './login.component.html',
-    styleUrl: './login.component.css',
-    imports: [CommonModule, ReactiveFormsModule, FormsModule, AllRecipesComponent]
+  selector: 'app-login',
+  standalone: true,
+  templateUrl: './login.component.html',
+  styleUrl: './login.component.css',
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, AllRecipesComponent]
 })
 export class LoginComponent {
   LoginForm: FormGroup = new FormGroup({
@@ -23,23 +23,27 @@ export class LoginComponent {
   })
   public showLogin: boolean = true
   public showErrorMessege: boolean = false
-//   // קוד TypeScript בקומפוננטה או בסרוויס בהתאם למבנה האפליקציה שלך
-// const user = { name: 'John', email: 'john@example.com' };
-// sessionStorage.setItem('currentUser', JSON.stringify(user));
+  //   // קוד TypeScript בקומפוננטה או בסרוויס בהתאם למבנה האפליקציה שלך
+  // const user = { name: 'John', email: 'john@example.com' };
+  // sessionStorage.setItem('currentUser', JSON.stringify(user));
 
   constructor(private _userService: UserServiceService, private router: Router) { }
 
   login() {
     this._userService.login(this.LoginForm.value as User).subscribe(
       {
-        error: (err) => {this.router.navigate(["register"]),
-        console.log(err);
-      },
+        error: (err) => {
+          this.router.navigate(["register"]),
+          console.log(err);
+        },
         next: (res) => {
-          if(!res)
-          this.showErrorMessege = true;
-        else
-        this.showLogin = false;
+          if (!res)
+            this.showErrorMessege = true;
+          else {
+            sessionStorage.setItem("currentUserId", (res.id ?? 0).toString());
+            this.router.navigate(["home","allRecipes"])
+            this.showLogin = false;
+          }
         }
       })
   }

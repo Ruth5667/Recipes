@@ -1,8 +1,8 @@
 <div class="container">
-    <div *ngIf="!showLogin">
+    <!-- <div *ngIf="!showLogin">
         <app-all-recipes></app-all-recipes>
-    </div>
-    <!-- <div *ngIf="showLogin"> -->
+    </div> -->
+    <div *ngIf="showLogin">
     <div class="login-form" [formGroup]="LoginForm">
         <div class="form-group">
             <label for="userName">Name</label>
@@ -16,5 +16,5 @@
         <button class="btn btn-primary btn-block" type="submit" [disabled]="!this.LoginForm.valid"
             (click)="login()">Login</button>
     </div></div>
-<!-- </div> -->
+</div>
     <!-- <p *ngIf ="res"></p> -->
