@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RuthInbal-Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f340696e1938bc80933a27c4b50cbce7cd19282a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa7ded276e9647c92754f2ee856ea4767cc3e8cd")]
 [assembly: System.Reflection.AssemblyProductAttribute("RuthInbal-Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RuthInbal-Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

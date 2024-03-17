@@ -25,13 +25,13 @@ namespace RuthInbal_Api.Controllers
             Preparation = new List<string> { "put all the products in the box", "mix all the products" },
             CategoryId = category1,
             Imag7 = "https://greissdesign.com/wp-content/uploads/2019/07/pasta-S.jpg",
-            PreparationTimeInMinutes = 35.0,
+            PreparationTimeInMinutes = 25.0,
             Ingredients = listOfIngredients
         }; private static Recipe recipe2 = new Recipe
         {
             IdRecipe = 2,
             RecipeName = "Meet",
-            DifficultyLevel = 2,
+            DifficultyLevel = 5,
             IdUser = user,
             DateOfAddTheRecipe = DateTime.Now,
             Preparation = new List<string> { "put all the products in the box", "mix all the products" },
@@ -49,14 +49,14 @@ namespace RuthInbal_Api.Controllers
             Preparation = new List<string> { "put all the products in the box", "mix all the products" },
             CategoryId = category2,
             Imag7 = "https://greissdesign.com/wp-content/uploads/2016/03/Food_Sandwich-Food-S.jpg",
-            PreparationTimeInMinutes = 35.0,
+            PreparationTimeInMinutes = 10.0,
             Ingredients = listOfIngredients
         };
         private static Recipe recipe4 = new Recipe
         {
             IdRecipe = 4,
             RecipeName = "BirthdayCake",
-            DifficultyLevel = 2,
+            DifficultyLevel = 4,
             IdUser = user,
             DateOfAddTheRecipe = DateTime.Now,
             Preparation = new List<string> { "put all the products in the box", "mix all the products" },
@@ -69,13 +69,13 @@ namespace RuthInbal_Api.Controllers
         {
             IdRecipe = 5,
             RecipeName = "BirthdayCake",
-            DifficultyLevel = 2,
+            DifficultyLevel = 5,
             IdUser = user,
             DateOfAddTheRecipe = DateTime.Now,
             Preparation = new List<string> { "put all the products in the box", "mix all the products" },
             CategoryId = category3,
             Imag7 = "https://greissdesign.com/wp-content/uploads/2019/10/slavic-food-S.jpg",
-            PreparationTimeInMinutes = 35.0,
+            PreparationTimeInMinutes = 67.0,
             Ingredients = listOfIngredients
         };
         private static List<Recipe> recipes = new List<Recipe> { recipe1, recipe2, recipe3, recipe4, recipe5 };

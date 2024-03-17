@@ -48,5 +48,29 @@
     overflow: hidden;  
 }
   .image-frame img:hover {
-    transform: scale(1.1); /* שינוי בגודל התמונה כאשר עוברים עליה */
-}
+    transform: scale(1.05); /* שינוי בגודל התמונה כאשר עוברים עליה */
+}.recipe-card {
+    /* border: 1px solid #ccc; */
+    /* border-radius: 5px; */
+    /* padding: 11px; */
+    /* margin-bottom: 20px; */
+    cursor: pointer;
+    /* transition: transform 0.5s ease; */
+  }
+  
+  /* .recipe-card:hover {
+    transform: scale(1.05);
+  } */
+  
+  .recipe-card h2 {
+    margin-top: 0;
+    
+  }
+  p {
+    font: caption;
+    font-style:oblique;
+    color: #c7a5a5;
+  }h2{
+    color: #211e1e;
+
+  }

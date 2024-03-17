@@ -1,11 +1,11 @@
 <ng-container *ngIf="recipee">
-  <div (click)="showAllDetails()">
+  <div class="recipe-card" (click)="showAllDetails()">
     <h2>{{recipee.recipeName}}</h2>
-    <p>level:</p>
+    <p>Level:</p>
     <div class="stars">
       <span class="star" *ngFor="let star of stars"><span>&#9733;</span></span>
     </div>
-    <p>during: {{recipee.preparationTimeInMinutes|myTime}}</p>
-    <div class="image-frame"><img id="imgcss" src="{{recipee.imag7}}" alt="{{recipee.recipeName}}"></div>
+    <p>Preparation Time: {{recipee.preparationTimeInMinutes|myTime}}</p>
+    <div class="image-frame"><img id="imgcss" [src]="recipee.imag7" [alt]="recipee.recipeName"></div>
   </div>
 </ng-container>
