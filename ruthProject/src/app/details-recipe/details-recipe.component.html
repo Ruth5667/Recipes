@@ -28,7 +28,7 @@
         </div>
     </ng-container>
 </div>
-<input *ngIf="currentUserId===recipe?.idUser?.id" type="button" class="btn btn-danger mt-3 mr-3" value="deleteRecipe"
+<input *ngIf="currentUserId===recipe?.idUser?.id" type="button" class="btn btn-outline-danger mt-3 mr-3 btnu" value="deleteRecipe"
     (click)="deleteRecipe()">
-<input *ngIf="currentUserId===recipe?.idUser?.id" type="button" class="btn btn-primary mt-3" value="updateRecipe"
+<input *ngIf="currentUserId===recipe?.idUser?.id" type="button" class="btn btn-outline-success mt-3 btnu" value="updateRecipe"
     (click)="updateRecipe()">

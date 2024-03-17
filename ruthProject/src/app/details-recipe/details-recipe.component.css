@@ -63,3 +63,8 @@ h3 {
 li {
     color: #666; /* צבע טקסט רשימה */
 }
+.btnu{
+    align-items: center;
+    margin-left: 45%;
+    width: 200px;
+}
