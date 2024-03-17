@@ -1,18 +1,44 @@
-<div class="container" >
+<div class=" cont">
     <div [formGroup]="filterForm">
-    filter the recipesList by:
-    Category:
-    <select formControlName="categoryId">
-        <option disabled>select</option>
-        <option *ngFor="let category of categoryList" [value]="category.id">
-            <h1>{{category.name}} </h1>
-        </option>
-    </select>
-    <input formControlName="name">
-<input formControlName="durinigTimeOfPreparation" type="number">
+        <!-- <div class="form-group row"> -->
+        <p>Filter the recipes by:</p>
+        <!-- <div class="form-group row"> -->
+        <label for="categoryId" class="col-sm-2 col-form-label">Category:</label><br>
+        <!-- <div class="col-sm-10"> -->
+        <select class="form-control filter" id="categoryId" formControlName="categoryId">
+            <option disabled>select</option>
+            <option *ngFor="let category of categoryList" [value]="category.id">
+                {{category.name}}
+            </option>
+        </select><br>
+        <!-- </div> -->
+        <!-- </div> -->
+        <!-- <div class="form-group row"> -->
+        <label for="name" class="col-sm-2 col-form-label">Name:</label><br>
+        <!-- <div class="col-sm-10"> -->
+        <input class="form-control filter" id="name" formControlName="name"><br>
+        <!-- </div> -->
+        <!-- </div> -->
+        <!-- <div class="form-group row"> -->
+        <label for="durinigTimeOfPreparation" class="col-sm-2 col-form-label">Preparation Time:</label><br>
+        <!-- <div class="col-sm-10"> -->
+        <input class="form-control filter" formControlName="durinigTimeOfPreparation" type="number">
+
+        <br>
+        <!-- </div> -->
+    </div>
+    <!-- </div> -->
+    <!-- </div> -->
+    <!-- <div class="recipes-list"> -->
+    <!-- <div class="container cont"> -->
+    <!-- <div class="row"> -->
+
+    <div *ngFor="let recipe of recipesListByFilter" style="width: 18rem;">
+        <app-small-recipe [recipee]="recipe"></app-small-recipe>
+        <hr>
+    </div>
 </div>
-<div *ngFor="let recipe of recipesListByFilter" style="width: 18rem;">
-    <app-small-recipe [recipee]="recipe"></app-small-recipe>
-    <hr>
-</div>
-</div>
+<!-- </div> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- </div> -->

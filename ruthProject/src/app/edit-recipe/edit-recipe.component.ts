@@ -93,6 +93,7 @@ export class EditRecipeComponent {
             console.log("תוכן התשובה:", err),
           next: (response) => {
             console.log("תוכן התשובה:", response);
+            this.router.navigate(["home",'allRecipes']);
           }
         }
       )

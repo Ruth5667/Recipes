@@ -33,7 +33,7 @@ export class AllRecipesComponent implements OnInit {
       if(form.name)
       this.recipesListByFilter=this.recipesList.filter(r=>r.recipeName.toLocaleLowerCase().includes(form.name.toLocaleLowerCase()))
       if(form.durinigTimeOfPreparation)
-      this.recipesListByFilter=this.recipesList.filter(r=>r.preparationTimeInMinutes===form.durinigTimeOfPreparation)
+      this.recipesListByFilter=this.recipesList.filter(r=>r.preparationTimeInMinutes<=form.durinigTimeOfPreparation)
     })
     this._recipeService.getRecipesList().subscribe(
       {

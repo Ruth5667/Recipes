@@ -1,8 +1,12 @@
+<div class="container">
 <div [formGroup]="this.RecipeForm">
-    <ng-container *ngIf="this.RecipeForm.controls['recipeName'].errors as nameError">
+    <div class="form-group">
+        <label for="recipeName">Recipe Name:</label>
+        <input type="text" class="form-control" id="recipeName" formControlName="recipeName">
+    </div>
+    <ng-container *ngIf="this.RecipeForm.controls['recipeName'].errors as nameError" class="invalid-feedback">
         <p *ngIf="nameError['required']">the file must be full!</p>
     </ng-container><br>
-    <input placeholder="recipeName" type="text" formControlName="recipeName">
     <ng-container *ngIf="this.RecipeForm.controls['password'].errors as nameError">
         <p *ngIf="nameError['required']">the file must be full!</p>
     </ng-container><br>
@@ -49,7 +53,7 @@
         </option>
     </select> <br><br>
     <button type="submit" [disabled]="!this.RecipeForm.valid" (click)="addRecipe()">AddRecipe</button>
-</div>
+</div></div>
 <!-- <ng-container *ngIf="res===true">
     <button mat-raised-button (click)="showAlert()">Show Alert</button>
 </ng-container> -->

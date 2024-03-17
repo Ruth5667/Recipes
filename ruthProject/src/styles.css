@@ -1,4 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+/* import * as bootstrap from 'bootstrap' */
+/* @import "bootstrap/scss/bootstrap"; */
+@import "bootstrap/dist/css/bootstrap.min.css";
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* .navbar {
+    margin-bottom: 30px;
+    justify-content: center;
+    display: flex;
+    position: static;
+    flex-direction: row;
+
+}
+
+.navbar-brand {
+    margin: 0 auto;
+    font-weight: bold;
+}
+
+.list-group-item {
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.list-group-item:hover,
+.list-group-item.active {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    outline: 0;
+} */
