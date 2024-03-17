@@ -11,8 +11,25 @@
 .filter{
     width: 88px;
     margin-left: 15px;
-    
+
+}.cont {
+  margin-top: 20px;
 }
+
+.filter-form {
+  margin-bottom: 20px;
+}
+
+.recipes-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
 /* img{
     width: 10%;
     height: 25%;
