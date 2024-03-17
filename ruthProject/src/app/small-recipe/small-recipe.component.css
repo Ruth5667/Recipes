@@ -13,7 +13,9 @@
     width: 500px;
     /* מרווח בין הקומפוננטות */
 }
-
+.star:hover {
+    color: #ff5733; 
+    transform: scale(1.3); }
 /* #imgcss {
     width: 70px;
     height: 140px;
@@ -31,3 +33,20 @@
     /* מרווח בין הכוכבים */
 }
 
+.image-frame {
+    border: 1.9px solid #1e1e07; /* גודל וסוג המסגרת */
+    border-radius: 2.2%; /* מעגל או עיגול של הפינות של המסגרת */
+    padding: 4.5px; /* רווח מסביב לתמונה */
+  }
+  
+  .image-frame img {
+    max-width: 100%; /* שמירה על תמונה במקום אחיד גם כאשר התמונה גדולה מהמסגרת */
+    display: block; /* מרכז את התמונה בתוך המסגרת */
+    margin: 0 auto; /* מרכז את התמונה בתוך המסגרת */
+    transition: transform 0.3s ease; /* הוספת transition לתכונת transform (גודל) עם מהירות אנימציה של 0.3 שניות */
+    border-radius: 2.2%; /* יוצר עיגול מחוץ לתמונה */
+    overflow: hidden;  
+}
+  .image-frame img:hover {
+    transform: scale(1.1); /* שינוי בגודל התמונה כאשר עוברים עליה */
+}

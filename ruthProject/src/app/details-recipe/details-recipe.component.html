@@ -13,7 +13,9 @@
                     <p>Level:</p>
                     <span class="star" *ngFor="let star of stars"><span>&#9733;</span></span>
                 </div>
-                <img class="card-img-top img-fluid" [src]="recipe.imag7" alt="imag">
+                <div class="image-frame">
+                    <img class="card-img-top img-fluid" [src]="recipe.imag7" alt="imag">
+                </div>
                 <h3>Ingredients:</h3>
                 <ul class="list-group">
                     <li *ngFor="let ingredient of recipe.ingredients" class="list-group-item">
@@ -28,7 +30,7 @@
         </div>
     </ng-container>
 </div>
-<input *ngIf="currentUserId===recipe?.idUser?.id" type="button" class="btn btn-outline-danger mt-3 mr-3 btnu" value="deleteRecipe"
-    (click)="deleteRecipe()">
-<input *ngIf="currentUserId===recipe?.idUser?.id" type="button" class="btn btn-outline-success mt-3 btnu" value="updateRecipe"
-    (click)="updateRecipe()">
+<input *ngIf="currentUserId===recipe?.idUser?.id" type="button" class="btn btn-outline-danger mt-3 mr-3 btnu"
+    value="deleteRecipe" (click)="deleteRecipe()">
+<input *ngIf="currentUserId===recipe?.idUser?.id" type="button" class="btn btn-outline-success mt-3 btnu"
+    value="updateRecipe" (click)="updateRecipe()">

@@ -10,6 +10,7 @@
 
 }
 .star:hover {
+    transform: scale(1.2); 
     color: #ff5733; /* צבע אדום כאשר מעבירים את העכבר מעל הכוכב */
 }
 .recipe-details {
@@ -67,4 +68,21 @@ li {
     align-items: center;
     margin-left: 45%;
     width: 200px;
+}
+.image-frame {
+    border: 2px solid #0f0f0f; /* גודל וסוג המסגרת */
+    border-radius: 2.2%; /* מעגל או עיגול של הפינות של המסגרת */
+    padding: 10px; /* רווח מסביב לתמונה */
+  }
+  
+  .image-frame img {
+    max-width: 100%; /* שמירה על תמונה במקום אחיד גם כאשר התמונה גדולה מהמסגרת */
+    display: block; /* מרכז את התמונה בתוך המסגרת */
+    margin: 0 auto; /* מרכז את התמונה בתוך המסגרת */
+    border-radius:2.2%;
+    transition: transform 0.4s ease; /* הוספת transition לתכונת transform (גודל) עם מהירות אנימציה של 0.3 שניות */
+
+  }
+  .image-frame img:hover {
+    transform: scale(1.2); /* שינוי בגודל התמונה כאשר עוברים עליה */
 }
