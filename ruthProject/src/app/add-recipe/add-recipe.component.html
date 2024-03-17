@@ -1,59 +1,91 @@
 <div class="container">
-<div [formGroup]="this.RecipeForm">
-    <div class="form-group">
-        <label for="recipeName">Recipe Name:</label>
-        <input type="text" class="form-control" id="recipeName" formControlName="recipeName">
-    </div>
-    <ng-container *ngIf="this.RecipeForm.controls['recipeName'].errors as nameError" class="invalid-feedback">
-        <p *ngIf="nameError['required']">the file must be full!</p>
-    </ng-container><br>
-    <ng-container *ngIf="this.RecipeForm.controls['password'].errors as nameError">
-        <p *ngIf="nameError['required']">the file must be full!</p>
-    </ng-container><br>
-    <input placeholder="password" type="password" formControlName="password"><br>
-    <ng-container *ngIf="this.RecipeForm.controls['preparationTimeInMinutes'].errors as nameError">
-        <p *ngIf="nameError['required']">the file must be full!</p>
-    </ng-container><br>
-    <input placeholder="preparationTimeInMinutes" type="number" formControlName="preparationTimeInMinutes">
-    <ng-container *ngIf="this.RecipeForm.controls['difficultyLevel'].errors as nameError">
-        <p *ngIf="nameError['min']">this level is between 1 to 5!</p>
-        <p *ngIf="nameError['max']">this level is between 1 to 5!</p>
-        <p *ngIf="nameError['required']">the file must be full!</p>
-    </ng-container><br>
-    <input placeholder="difficultyLevel" type="number" formControlName="difficultyLevel">
-    <ng-container *ngIf="this.RecipeForm.controls['dateOfAddTheRecipe'].errors as nameError">
-        <p *ngIf="nameError['required']">the file must be full!</p>
-    </ng-container><br>
-    <input placeholder="dateOfAddTheRecipe" type="date" formControlName="dateOfAddTheRecipe">
-    <ng-container *ngIf="this.RecipeForm.controls['imag7'].errors as nameError">
-        <p *ngIf="nameError['required']">the file must be full!</p>
-    </ng-container><br>
-    <ng-container>
-        <div formArrayName="ingredients">
-            <div *ngFor="control of ingredients.controls; let i = index">
-                <input (blur)="changeIngredient(ingredients.controls[i].value, i)" placeholder="ingredients" type="text" formControlName="{{i}}">
-            </div>
-        </div><br>
-    </ng-container>
-    <ng-container>
-        <div formArrayName="preparation">
-            <div *ngFor="control of preparation.controls; let i = index">
-                <input (blur)="changePreparation(preparation.controls[i].value, i)" placeholder="Preparation" type="text" formControlName="{{i}}">
-            </div>
-        </div><br>
-    </ng-container>
-    <input placeholder="PathOfImg" type="text" formControlName="imag7"><br>
+    <div [formGroup]="this.RecipeForm">
+        <div class="form-group">
+            <label for="recipeName">Recipe Name:</label>
+            <input type="text" class="form-control" id="recipeName" formControlName="recipeName">
+            <ng-container *ngIf="this.RecipeForm.controls['recipeName'].errors as nameError" class="invalid-feedback">
+                <p *ngIf="nameError['required']"> Recipe name is required!</p>
+            </ng-container>
+        </div>
+        <br>
 
-    <!-- <ng-container *ngIf="this.RecipeForm.controls['category'].errors as nameError">
-        <p *ngIf="nameError['required']">the file must be full!</p>
-    </ng-container><br> -->
-    <select formControlName="category">
-        <option *ngFor="let category of CategoryList" [value]="category.id">
-            <h1>{{category.name}} </h1>
-        </option>
-    </select> <br><br>
-    <button type="submit" [disabled]="!this.RecipeForm.valid" (click)="addRecipe()">AddRecipe</button>
-</div></div>
-<!-- <ng-container *ngIf="res===true">
-    <button mat-raised-button (click)="showAlert()">Show Alert</button>
-</ng-container> -->
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="password" formControlName="password">
+            <ng-container *ngIf="this.RecipeForm.controls['password'].errors as nameError" class="invalid-feedback">
+                <p *ngIf="nameError['required']">Password is required!</p>
+            </ng-container>
+        </div><br>
+
+        <div class="form-group">
+            <label for="preparationTimeInMinutes">Preparation Time (minutes):</label>
+            <input type="number" class="form-control" id="preparationTimeInMinutes"
+                formControlName="preparationTimeInMinutes">
+            <ng-container *ngIf="this.RecipeForm.controls['preparationTimeInMinutes'].errors as nameError"
+                class="invalid-feedback">
+                <p *ngIf="nameError['required']">Preparation time is required!</p>
+            </ng-container>
+        </div><br>
+
+
+        <div class="form-group">
+            <label for="difficultyLevel">DifficultyLevel between 1 and 5!:</label>
+            <input type="number" class="form-control" formControlName="difficultyLevel">
+            <ng-container *ngIf="this.RecipeForm.controls['difficultyLevel'].errors as nameError">
+                <p *ngIf="nameError['min']">this level is between 1 to 5!</p>
+                <p *ngIf="nameError['max']">this level is between 1 to 5!</p>
+                <p *ngIf="nameError['required']">the file must be full!</p>
+            </ng-container>
+        </div><br>
+
+        <div class="form-group">
+            <label for="dateOfAddTheRecipe">DateOfAddTheRecipe:</label>
+            <input type="date" formControlName="dateOfAddTheRecipe" class="form-control">
+            <ng-container *ngIf="this.RecipeForm.controls['dateOfAddTheRecipe'].errors as nameError"
+                class="invalid-feedback">
+                <p *ngIf="nameError['required']">the file must be full!</p>
+            </ng-container>
+        </div><br>
+
+        <div class="form-group">
+            <label for="PathOfImg">Path Of Img:</label>
+            <input type="text" formControlName="imag7" class="form-control">
+            <ng-container *ngIf="this.RecipeForm.controls['imag7'].errors as nameError" class="invalid-feedback">
+                <p *ngIf="nameError['required']">the file must be full!</p>
+            </ng-container>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="category">Category:</label>
+            <select formControlName="category" class="form-control" id="category">
+                <option *ngFor="let category of CategoryList" [value]="category.id">
+                    {{ category.name }}
+                </option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="ingredients">Ingredients:</label>
+            <div formArrayName="ingredients">
+                <div *ngFor="control of ingredients.controls; let i = index" class="form-control">
+                    <input (blur)="changeIngredient(ingredients.controls[i].value, i)" type="text"
+                        formControlName="{{i}}" class="form-control">
+                </div>
+            </div>
+        </div><br>
+
+        <div class="form-group">
+            <label for="preparation">Preparation:</label>
+            <div formArrayName="preparation">
+                <div *ngFor="control of preparation.controls; let i = index" class="form-control">
+                    <input (blur)="changePreparation(preparation.controls[i].value, i)"
+                        type="text" formControlName="{{i}}" class="form-control">
+                </div>
+            </div>
+        </div><br>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!this.RecipeForm.valid" (click)="addRecipe()">Add Recipe</button>
+
+
+    </div>
+</div>
