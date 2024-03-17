@@ -9,8 +9,8 @@
 
 }
 .filter{
-    width: 88px;
-    margin-left: 15px;
+    width: 100px;
+    margin-left: 35px;
 
 }.cont {
   margin-top: 20px;
@@ -19,7 +19,9 @@
 .filter-form {
   margin-bottom: 20px;
 }
-
+.lac{
+    margin-left: 25px;
+}
 .recipes-list {
   display: flex;
   flex-wrap: wrap;
